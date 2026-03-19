@@ -10,10 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class Perfil {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Perfil extends BaseEntity {
 
   private String tipoDocumento;
   private String numeroDocumento;

@@ -10,11 +10,8 @@ import java.time.LocalDate;
 @Table(name = "libro")
 @Getter
 @Setter
-public class Libro {
+public class Libro extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     private String nombrelibro;
 
@@ -23,14 +20,14 @@ public class Libro {
     private LocalDate fechamodificacion;
 
     // Muchos libros a un autor
-    // @ManyToOne
-    // @JoinColumn(name = "autor_id")
-    // private Autor autor;
+    @ManyToOne
+    @JoinColumn(name = "autor_id")
+    private Autor autor;
 
     // Muchos libros a una categoria
-    // @ManyToOne
-    // @JoinColumn(name = "categoria_id")
-    // private Categoria categoria;
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
 
     // Muchos libros a un estado
     @ManyToOne

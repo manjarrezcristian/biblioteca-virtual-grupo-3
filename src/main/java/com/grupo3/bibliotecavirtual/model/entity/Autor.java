@@ -13,11 +13,7 @@ import java.util.List;
 @Table(name = "autores")
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor @Builder
-public class Autor {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Autor extends BaseEntity {
 
     @Column(nullable = false, length = 120)
     private String nombre;
@@ -36,14 +32,5 @@ public class Autor {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    // Helper methods opcionales para mantener ambos lados sincronizados
-    public void addLibro(Libro libro) {
-        libros.add(libro);
-        libro.setAutor(this);
-    }
 
-    public void removeLibro(Libro libro) {
-        libros.remove(libro);
-        libro.setAutor(null);
-    }
 }

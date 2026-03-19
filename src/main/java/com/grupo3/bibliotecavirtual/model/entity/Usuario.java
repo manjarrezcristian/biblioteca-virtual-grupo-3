@@ -6,13 +6,11 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 @Entity
-@Table(name = "user")
+@Table(name = "usuarios")
 @Getter
 @Setter
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Usuario extends BaseEntity {
+
 
     private String email;
 

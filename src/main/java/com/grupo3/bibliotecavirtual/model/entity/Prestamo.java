@@ -1,5 +1,6 @@
 package com.grupo3.bibliotecavirtual.model.entity;
 
+import com.grupo3.bibliotecavirtual.model.enums.EstadoPrestamo;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
@@ -17,11 +18,9 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class Prestamo {
+public class Prestamo extends BaseEntity {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
 
     @ManyToOne
     @JoinColumn(name = "libro_id")
